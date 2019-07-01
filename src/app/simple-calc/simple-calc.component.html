@@ -1,0 +1,12 @@
+<div>First Number : <input [(ngModel)]="firstNumber"></div>
+<div>Second Number : <input [(ngModel)]="secondNumber"></div>
+
+<p>
+        <button (click)="computeOperation('+')">+</button>
+        <button (click)="computeOperation('-')">-</button>
+        <button (click)="computeOperation('x')">x</button>
+        <button (click)="computeOperation('/')">/</button>
+    </p>
+<p>
+    Computed Result : {{operation | calcCompute: firstNumber: secondNumber}}
+</p>
