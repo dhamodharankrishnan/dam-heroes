@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
+import { productObjects } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -9,9 +10,7 @@ import { Product } from '../product';
 export class ProductListComponent implements OnInit {
 constructor() { }
 
-prod1: Product = { id: 100, name: 'Samsung S8', description: 'Samsung S8 - A new mobile...', price: 100, notification: false};
-prod2: Product = { id: 200, name: 'Samsung Note', description: '', price: 300, notification: false};
-products: Product[] = [ this.prod1, this.prod2];
+products = productObjects;
 
 ngOnInit() {
 }
