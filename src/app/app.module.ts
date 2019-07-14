@@ -18,6 +18,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductSpecComponent } from './product-spec/product-spec.component';
 import { FavoriteColorComponent } from './favorite-color/favorite-color.component';
 import { FavoriteColorTemplateDrivenComponent } from './favorite-color-template-driven/favorite-color-template-driven.component';
+import { CartComponent } from './cart/cart.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { FavoriteColorTemplateDrivenComponent } from './favorite-color-template-
     ProductDetailsComponent,
     ProductSpecComponent,
     FavoriteColorComponent,
-    FavoriteColorTemplateDrivenComponent
+    FavoriteColorTemplateDrivenComponent,
+    CartComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

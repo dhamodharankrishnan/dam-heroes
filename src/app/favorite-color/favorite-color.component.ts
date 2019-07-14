@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { signalObjects } from '../signalObjects';
+import { Signal } from '../signal';
 
 @Component({
   selector: 'app-favorite-color',
@@ -8,10 +10,21 @@ import { FormControl } from '@angular/forms';
 })
 export class FavoriteColorComponent implements OnInit {
 
+  signals = signalObjects;
+  currentSignal;
+
   favoriteColorControl = new FormControl('');
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.currentSignal = {id: 100, color: 'Black'};
+    this.favoriteColorControl.setValue(this.currentSignal.color);
   }
+
+  setSignal( signalFromEvent: Signal) {
+      this.currentSignal = signalFromEvent;
+      this.favoriteColorControl.setValue(this.currentSignal.color);
+    }
 
 }

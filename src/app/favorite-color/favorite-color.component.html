@@ -1,1 +1,6 @@
 Favorite Color: <input type="text" [formControl]="favoriteColorControl">
+<div *ngFor="let signal of signals; index as signalId">
+    <button (click)="setSignal( signal )">
+        {{ signal.color }}
+      </button>
+</div>

@@ -1,24 +1,32 @@
+<!--
 <p>
   <app-favorite-color></app-favorite-color>
   
 </p>
 <p>
   <app-favorite-color-template-driven></app-favorite-color-template-driven>
-  
 </p>
+-->
 <p>Product List</p>
 <div *ngFor="let product of products; index as productId">
-  <div> {{product.id}}</div>
-  <div>
+  <span> {{product.id}}</span>
+  <span>
     <h3>
       <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
         {{ product.name }}
       </a>
     </h3>
-  </div>
-  <p *ngIf="product.description">
+  </span>
+  <span *ngIf="product.description">
     Description: {{ product.description }}
-  </p>
+  </span>
+  <span>
+    <h3>
+      <a [title]="product.name + ' Specification '" [routerLink]="['/productspec', productId]">
+        Specification of  {{ product.name }}
+      </a>
+    </h3>
+  </span>
   <button (click)="share( product )">
     Share
   </button>
@@ -26,8 +34,8 @@
 
   </app-product-alerts>
 
-  <p *ngIf="product.notification">
+  <span *ngIf="product.notification">
       You will be notified when  {{ product.name }} goes on sale.
-    </p>
+  </span>
   
 </div>

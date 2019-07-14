@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FavoriteColorComponent } from './favorite-color.component';
+import { CartComponent } from './cart.component';
 
-describe('FavoriteColorComponent', () => {
-  let component: FavoriteColorComponent;
-  let fixture: ComponentFixture<FavoriteColorComponent>;
+describe('CartComponent', () => {
+  let component: CartComponent;
+  let fixture: ComponentFixture<CartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavoriteColorComponent ]
+      declarations: [ CartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FavoriteColorComponent);
+    fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,6 +22,4 @@ describe('FavoriteColorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });
-

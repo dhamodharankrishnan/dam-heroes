@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteColorTemplateDrivenComponent implements OnInit {
 
-  favoriteColor = 'Black';
+  favoriteColor = 'Red';
   constructor() { }
 
   ngOnInit() {
