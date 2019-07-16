@@ -20,6 +20,8 @@ import { FavoriteColorComponent } from './favorite-color/favorite-color.componen
 import { FavoriteColorTemplateDrivenComponent } from './favorite-color-template-driven/favorite-color-template-driven.component';
 import { CartComponent } from './cart/cart.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     FavoriteColorComponent,
     FavoriteColorTemplateDrivenComponent,
     CartComponent,
-    TopBarComponent
+    TopBarComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
