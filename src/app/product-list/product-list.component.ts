@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { productObjects } from '../products';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -11,8 +12,13 @@ export class ProductListComponent implements OnInit {
 constructor() { }
 
 products = productObjects;
+dates = [];
 
 ngOnInit() {
+  for( let index = 1; index <= 31; index++){
+    this.dates.push(index);
+  }
+  
 }
 
 share(product: Product) {
