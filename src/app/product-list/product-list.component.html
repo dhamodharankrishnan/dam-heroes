@@ -10,6 +10,9 @@
 <select >
   <option *ngFor="let dateValue of dates; index as dateId">{{dateValue}}</option>
 </select>
+<select>
+  <option *ngFor="let monthValue of months; index as monthId">{{monthValue}}</option>
+</select>
 <p>Product List</p>
 <div *ngFor="let product of products; index as productId">
   <span> {{product.id}}</span>

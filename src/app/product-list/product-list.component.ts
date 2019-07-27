@@ -13,7 +13,9 @@ constructor() { }
 
 products = productObjects;
 dates = [];
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+month = ['']
 ngOnInit() {
   for( let index = 1; index <= 31; index++){
     this.dates.push(index);
