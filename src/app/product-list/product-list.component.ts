@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { productObjects } from '../products';
 import { NgModule } from '@angular/core';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -14,12 +15,23 @@ constructor() { }
 products = productObjects;
 dates = [];
 months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+productsShared = [];
 
 ngOnInit() {
   for( let index = 1; index <= 31; index++){
     this.dates.push(index);
   }
-  
+  // Create an observable to register click event.
+  fromEvent(document, 'click').subscribe(
+    () => {
+      console.log('RxJS Subscription Clicked!');
+    },
+    () => console.log('RxJS Subscription Error...'),
+    () => console.log('RxJS Subscription Complete...')
+  );
+
+  let count = 0;
+  document.addEventListener('click', () => console.log(`Clicked ${++count} times`));
 }
 
 share(product: Product) {

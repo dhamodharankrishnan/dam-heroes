@@ -20,8 +20,10 @@ import { FavoriteColorComponent } from './favorite-color/favorite-color.componen
 import { FavoriteColorTemplateDrivenComponent } from './favorite-color-template-driven/favorite-color-template-driven.component';
 import { CartComponent } from './cart/cart.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+// HttpClientModule - For HttpClient connection.
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
+import { ConfigComponent } from './config/config/config.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     FavoriteColorTemplateDrivenComponent,
     CartComponent,
     TopBarComponent,
-    ShippingComponent
+    ShippingComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -24,13 +25,34 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit() {
+    
+    const observable = new Observable(subscriber => {
+      // subscriber.next(1);
+      subscriber.next(2);
+      subscriber.next(3);
+      // subscriber.error('Please pay your channel balance');
+      setTimeout(() => {
+        // subscriber.next(4);
+        subscriber.complete();
+      }, 1000);
+    });
+
+    console.log('just before subscribe');
+    observable.subscribe({
+      next(x) { console.log('Subscriber got value ' + x); },
+      error(err) { console.error('something wrong occurred: ' + err); },
+      complete() { console.log('Completed...Subscription'); }
+    });
+    console.log('just after subscribe');
   }
 
   onSubmit(customerData) {
     // Process checkout data here
-    console.warn('Your order has been submitted', customerData);
+    console.log('Your order has been submitted', customerData);
  
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
+
+    
   }
 }

@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import { productObjects } from '../products';
 import { CartService } from '../cart.service';
+import { fromEvent } from 'rxjs';
+import { scan } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-product-details',
@@ -21,6 +24,14 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.product = productObjects[+params.get('productId')];
     });
+
+    // let count = 0;
+    // document.addEventListener('click', () => console.log(`Bought ${++count} times`));
+
+    fromEvent(document, 'click')
+    .pipe(scan(count => count + 1, 0))
+    .subscribe(count => console.log(`Bought ${count} times`));
+
   }
 
   addToCart(product) {

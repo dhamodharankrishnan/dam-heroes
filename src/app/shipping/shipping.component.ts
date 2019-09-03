@@ -10,10 +10,17 @@ export class ShippingComponent implements OnInit {
 
   shippingCosts;
   constructor(private cartService: CartService) {
-    this.shippingCosts = this.cartService.getShippingPrices();
+    // Directly by calling getShippingPrices
+    // this.shippingCosts = this.cartService.getShippingPrices();
+
+    // Subscribe to the readonly shippingCosts of the CartService.
+     this.cartService.shippingCosts.subscribe( updatedShippingCosts => {
+       this.shippingCosts = updatedShippingCosts;
+     });
   }
 
   ngOnInit() {
+    this.cartService.getShippingPrices();
   }
 
 }
