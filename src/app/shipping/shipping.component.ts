@@ -8,6 +8,7 @@ import { CartService } from '../cart.service';
 })
 export class ShippingComponent implements OnInit {
 
+  // Variable.
   shippingCosts;
   constructor(private cartService: CartService) {
     // Directly by calling getShippingPrices

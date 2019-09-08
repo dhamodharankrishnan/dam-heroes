@@ -1,0 +1,18 @@
+[
+    {
+      "doorNo": "D001",
+      "streetName": "Nithyanandam st",
+      "city" : "Thiruverkadu"
+    },
+    {
+        "doorNo": "D036",
+        "streetName": "Ponniamman koil st",
+        "city" : "Vellore"
+      },
+    {
+        "doorNo": "D228",
+        "streetName": "Pallavan Nagar",
+        "city" : "Salem"
+      }
+  ]
+

@@ -24,6 +24,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { ConfigComponent } from './config/config/config.component';
+import { AddressListComponent } from './address-list/address-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ConfigComponent } from './config/config/config.component';
     CartComponent,
     TopBarComponent,
     ShippingComponent,
-    ConfigComponent
+    ConfigComponent,
+    AddressListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<h3>Address</h3>
+
+<div class="shipping-item" *ngFor="let address of addressList| async">
+  <span>{{ address.doorNo }}</span>
+  <span>{{ address.streetName}}</span>
+  <span>{{ address.city}}</span>
+</div>
