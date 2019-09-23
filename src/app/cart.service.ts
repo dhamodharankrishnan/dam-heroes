@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // Using Observable
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -8,6 +8,7 @@ import { Product } from './product';
 
 // Using Observable
 import { from } from 'rxjs';
+
 
 // Using Observable
 export interface ShippingCost {
@@ -20,6 +21,7 @@ export interface ShippingCost {
 export class CartService {
 
   items: Product[];
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   // Using Observable - Behavior Subject.
   private _shippingCosts = new BehaviorSubject<ShippingCost[]>([]);
@@ -76,4 +78,43 @@ export class CartService {
  getShippingCosts() {
    return this._shippingCosts.asObservable;
  }
+
+  public postPersonInfo() {
+    console.log('Before - postPersonInfo');
+    const TENANT_API_URL = 'http://localhost:3000/';
+
+    const angularServiceTenantObj =     {
+      salutions: 'Mr',
+      firstName: 'Suresh',
+      lastName: 'Kumar',
+      fatherName: 'Andi',
+      phone: '6754839837',
+      familyMembers: 2,
+      address: 'No 30',
+      streetAddress: 'Sivan Kovil Street',
+      streetAddressLine2: 'Near Head Office',
+      city: 'Coimbatore',
+      postal: 620903,
+      state: 'TamilNadu',
+      country: 'INDIA'
+  };
+    this.http
+        .post(TENANT_API_URL + 'tenant', JSON.stringify(angularServiceTenantObj), { headers: this.headers })
+        .toPromise()
+        .catch(this.handleError);
+
+    console.log('After - postPersonInfo');
+
+  }
+
+  /**
+   * Method to handle the error during service call
+   * @param error Error message
+   */
+    handleError(error: any): Promise<any> {
+      console.error('An error occurred', error);
+      return Promise.reject(error.message || error);
+  }
+
+
 }

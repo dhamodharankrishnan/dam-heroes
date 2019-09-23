@@ -24,4 +24,9 @@ export class ShippingComponent implements OnInit {
     this.cartService.getShippingPrices();
   }
 
+  saveTenant() {
+    console.log('Before - saveTenant');
+    this.cartService.postPersonInfo();
+    console.log('After - saveTenant');
+  }
 }
