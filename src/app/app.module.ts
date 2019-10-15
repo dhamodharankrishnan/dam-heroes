@@ -28,6 +28,7 @@ import { AddressListComponent } from './address-list/address-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { DamHeroesMaterialModule } from '../material-module';
+import { TenantListComponent } from './tenant-list/tenant-list.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DamHeroesMaterialModule } from '../material-module';
     TopBarComponent,
     ShippingComponent,
     ConfigComponent,
-    AddressListComponent
+    AddressListComponent,
+    TenantListComponent
   ],
   imports: [
     BrowserModule,

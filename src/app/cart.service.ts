@@ -69,7 +69,7 @@ export class CartService {
       // Assigning the values from datastore to the observable.
       // Video gets transmitted to the TV in the hall outside.
       this._shippingCosts.next( Object.assign({}, this.dataStore).shippingCosts);
-    }, error => console.log('Could not load todos.'));
+    }, error => console.log('Could not load Shipping cost.'));
  }
 
  // shipping-component.ts
