@@ -5,6 +5,7 @@ import { productObjects } from '../products';
 import { CartService } from '../cart.service';
 import { fromEvent } from 'rxjs';
 import { scan } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { scan } from 'rxjs/operators';
 export class ProductDetailsComponent implements OnInit {
 
   product;
+  selectedDate = new FormControl('');
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService) {
@@ -36,7 +38,8 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product) {
     this.cartService.addToCart(product);
-    alert('Your product has been added to the cart!');
+    alert('Your product has been added to the cart! on :' + this.selectedDate);
     console.log('Your product has been added to the cart!');
+    console.log(this.selectedDate.value);
   }
 }
