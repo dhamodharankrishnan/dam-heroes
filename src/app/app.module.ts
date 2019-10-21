@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { DamHeroesMaterialModule } from '../material-module';
 import { TenantListComponent } from './tenant-list/tenant-list.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
     ShippingComponent,
     ConfigComponent,
     AddressListComponent,
-    TenantListComponent
+    TenantListComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
