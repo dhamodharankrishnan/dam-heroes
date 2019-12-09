@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Dhamo, the HERO!';
 
   navLinks = [
-    {
+      {
       path: '/productlist',
       label: 'Product List'
     },

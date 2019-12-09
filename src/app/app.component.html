@@ -1,3 +1,4 @@
+<app-top-bar></app-top-bar>
 <nav mat-tab-nav-bar>
   <a mat-tab-link
      *ngFor="let link of navLinks"
@@ -7,7 +8,6 @@
     {{link.label}}
   </a>
 </nav>
-<app-top-bar></app-top-bar>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
